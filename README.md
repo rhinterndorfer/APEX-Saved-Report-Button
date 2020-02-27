@@ -4,6 +4,8 @@
 
 This plug-in is used to replace the saved reports dropdown in Interactive Reports and Interactive Grids with nice buttons.
 
+For configuration add this dynamic action to the page load event (on global page or only to the page where you want do use the plugin) and select the plugin from the list.
+
 For a working demo click:  
 https://apex.oracle.com/pls/apex/f?p=105972  
 Login is: demo / 12345678
