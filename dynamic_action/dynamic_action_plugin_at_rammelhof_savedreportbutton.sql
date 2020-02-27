@@ -28,7 +28,7 @@ prompt APPLICATION 105972 - Playground
 -- Application Export:
 --   Application:     105972
 --   Name:            Playground
---   Date and Time:   21:13 Thursday February 27, 2020
+--   Date and Time:   22:00 Thursday February 27, 2020
 --   Exported By:     OFFICE@RAMMELHOF.AT
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -66,9 +66,9 @@ wwv_flow_api.create_plugin(
 '  l_attr_font_color p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_02;',
 '  l_attr_border_color p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_03;',
 '  l_attr_bg_color_default p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_04;',
-'  l_attr_bg_color_default_selected p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_05;',
+'  l_attr_bg_color_default_sel p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_05;',
 '  l_attr_bg_color_private p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_06;',
-'  l_attr_bg_color_private_selected p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_07;',
+'  l_attr_bg_color_private_sel p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_07;',
 '  l_attr_bg_color_hover p_dynamic_action.attribute_01%TYPE := p_dynamic_action.attribute_08;',
 '  ',
 '  --',
@@ -102,11 +102,11 @@ wwv_flow_api.create_plugin(
 '            }',
 '      ',
 '            .SavedReportButtonSelected, .SavedReportButtonSelected:focus {',
-'                background-color: ''||l_attr_bg_color_default_selected||''; ',
+'                background-color: ''||l_attr_bg_color_default_sel||''; ',
 '            }',
 '      ',
 '            .SavedReportButtonPrivate.SavedReportButtonSelected, .SavedReportButtonPrivate.SavedReportButtonSelected:focus {',
-'                background-color: ''||l_attr_bg_color_private_selected||''; ',
+'                background-color: ''||l_attr_bg_color_private_sel||''; ',
 '            }      ',
 '',
 '            .SavedReportButton:hover {',
@@ -158,7 +158,7 @@ wwv_flow_api.create_plugin(
 ,p_render_function=>'render_dynamic_action'
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
-,p_version_identifier=>'0.1'
+,p_version_identifier=>'0.2'
 ,p_about_url=>'https://github.com/rhinterndorfer/APEX-Saved-Report-Button'
 ,p_files_version=>31
 );
