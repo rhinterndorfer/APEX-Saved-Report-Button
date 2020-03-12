@@ -1,6 +1,6 @@
 // APEX Saved Report Button
 // Author: Raphael Hinterndorfer
-// Version: 0.1
+// Version: 0.2
 
 
 jQuery.expr[':'].regex = function(elem, index, match) {
@@ -53,17 +53,18 @@ var savedReportButton = {
                 var selectId = $(opt).closest('select[id]').attr('id');
 
                 // check if its a private report
-                var optgroupIndex = $(opt).parent().index();
-                var addclasses = optgroupIndex === 1 ? "SavedReportButtonPrivate" : "";
+                var optgroupName = $(opt).parent().attr('label');
                 
                 // create button with reference to original select option
                 var buttonText = opt.text.replace(/[0-9]+\.\s/gm,'');
-                addclasses = opt.selected ? addclasses + " SavedReportButtonSelected" : addclasses;
+                var addclasses = opt.selected ? " SavedReportButtonSelected" : "";
 
                 $(".a-IRR-selectList[id="+selectId+"]").before('<button type="button" srb-ir-id="'+selectId
                     +'" srb-ir-option="'+opt.value
                     +'" style="" class="a-Button a-IRR-button a-IRR-button--actions js-menuButton SavedReportButton '+addclasses
-                    +'">' + buttonText 
+                    +'"><div class="SavedReportButtonText">' + buttonText 
+                    +'</div><div class="SavedReportButtonGroupText">(' + optgroupName + ')'
+                    +'</div>'
                     + '</button>');
             });
 
@@ -105,16 +106,17 @@ var savedReportButton = {
                         // if not displayed use only first element
                         
                             // check if its a private report
-                            var optgroupIndex = $(opt).parent().index();
-                            var addclasses = optgroupIndex === 1 ? "SavedReportButtonPrivate" : "";
+                            var optgroupName = $(opt).parent().attr('label');
                             
                             // create button with reference to original select option
                             var buttonText = opt.text.replace(/[0-9]+\.\s/gm,'');
-                            addclasses = opt.selected ? addclasses + " SavedReportButtonSelected" : addclasses;
+                            var addclasses = opt.selected ? addclasses + " SavedReportButtonSelected" : "";
                             $("div.SaveReportButtonIGContainer[srb-ig-id][srb-ig-id=" + selectId +"]").append('<button type="button" srb-ig-id="' + selectId
                                 +'" srb-ig-option="'+opt.value
                                 +'" style="" class="a-Button a-IRR-button a-IRR-button--actions js-menuButton SavedReportButton ' + addclasses
-                                +'">' + buttonText 
+                                +'"><div class="SavedReportButtonText">' + buttonText 
+                                +'</div><div class="SavedReportButtonGroupText">(' + optgroupName + ')'
+                                +'</div>'
                                 +'</button>');
                         
                     });
