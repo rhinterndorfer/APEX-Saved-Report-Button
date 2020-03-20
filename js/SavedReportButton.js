@@ -1,6 +1,6 @@
 // APEX Saved Report Button
 // Author: Raphael Hinterndorfer
-// Version: 0.2
+// Version: 0.3
 
 
 jQuery.expr[':'].regex = function(elem, index, match) {
@@ -85,6 +85,20 @@ var savedReportButton = {
 
             // hide saved reports select
             $('select.a-IRR-selectList:regex(id,.*_saved_reports)').hide();
+			
+			// move saved reports to start
+			/*
+			$('.a-IRR-controlGroup--search').each(function(i, element) {
+				if($(element).next('.a-IRR-controlGroup--views').length > 0) {
+					$(element).before($(element).next('.a-IRR-controlGroup--views'));
+				}
+			});
+			*/
+			
+			$('.a-IRR-controlGroup--views').each(function(i, element) {
+				$(element).parent().prepend($(element));
+			});
+			
         },
 
     createButtonsIG: function() {
@@ -142,6 +156,11 @@ var savedReportButton = {
                     // set option value and trigger change
                     $('div[id='+selectId+'] * .a-Toolbar-selectList[data-action=change-report]').val(option).change();	
             });
+			
+			// move saved reports to start
+			$('.SaveReportButtonIGContainer').each(function(i, element) {
+				$(element).parent().prepend($(element));
+			});
         }
 }
 

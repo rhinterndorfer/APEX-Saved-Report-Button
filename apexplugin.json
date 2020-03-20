@@ -1,6 +1,6 @@
 {
     "name": "APEX Saved Report Button",
-    "version": "0.3",
+    "version": "0.4",
     "description": "This plug-in is used convert the saved report dropdown of Interactive Report and Interactive Grid regions into buttons. Login for demo is user: demo, password: 12345678",
     "keywords": ["oracle", "apex", "plugin", "dynamic action", "saved report", "button"],
     "homepage": "https://github.com/rhinterndorfer/APEX-Saved-Report-Button",

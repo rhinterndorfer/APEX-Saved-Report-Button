@@ -10,7 +10,9 @@ For a working demo click:
 https://apex.oracle.com/pls/apex/f?p=105972  
 Login is: demo / 12345678
 
-Version 0.3: Add report group name below report name; remove faulty private report coloring;
+Version history:
+* 0.3: Add report group name below report name; remove faulty private report coloring;  
+* 0.4: Move saved report buttons to the beginning of the toolbar;
 
 If you like my stuff, donate me a coffee  
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/rhinterndorfer)
