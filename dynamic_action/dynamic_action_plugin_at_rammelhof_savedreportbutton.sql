@@ -6,48 +6,25 @@ whenever sqlerror exit sql.sqlcode rollback
 -- ORACLE Application Express (APEX) export file
 --
 -- You should run the script connected to SQL*Plus as the Oracle user
--- APEX_200100 or as the owner (parsing schema) of the application.
+-- APEX_050100 or as the owner (parsing schema) of the application.
 --
 -- NOTE: Calls to apex_application_install override the defaults below.
 --
 --------------------------------------------------------------------------------
 begin
 wwv_flow_api.import_begin (
- p_version_yyyy_mm_dd=>'2019.03.31'
-,p_release=>'20.1.0.00.11'
-,p_default_workspace_id=>25849437339754712638
-,p_default_application_id=>105972
-,p_default_id_offset=>0
-,p_default_owner=>'RAMMELHOFAT'
+ p_version_yyyy_mm_dd=>'2016.08.24'
+,p_release=>'5.1.4.00.08'
+,p_default_workspace_id=>2940495016696413
+,p_default_application_id=>100
+,p_default_owner=>'HR'
 );
-end;
-/
- 
-prompt APPLICATION 105972 - Playground
---
--- Application Export:
---   Application:     105972
---   Name:            Playground
---   Date and Time:   09:17 Friday March 20, 2020
---   Exported By:     OFFICE@RAMMELHOF.AT
---   Flashback:       0
---   Export Type:     Component Export
---   Manifest
---     PLUGIN: 59939301032763172161
---   Manifest End
---   Version:         20.1.0.00.11
---   Instance ID:     63113759365424
---
-
-begin
-  -- replace components
-  wwv_flow_api.g_mode := 'REPLACE';
 end;
 /
 prompt --application/shared_components/plugins/dynamic_action/at_rammelhof_savedreportbutton
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(59962012903048701525)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'AT.RAMMELHOF.SAVEDREPORTBUTTON'
 ,p_display_name=>'APEX Saved Report Button'
@@ -161,13 +138,13 @@ wwv_flow_api.create_plugin(
 ,p_render_function=>'render_dynamic_action'
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
-,p_version_identifier=>'0.4'
+,p_version_identifier=>'0.5'
 ,p_about_url=>'https://github.com/rhinterndorfer/APEX-Saved-Report-Button'
 ,p_files_version=>36
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(60125828055090130549)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(60148539925375659913)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -179,8 +156,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(60126367526047163718)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(60149079396332693082)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -191,8 +168,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(60124334169353614003)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(60147046039639143367)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -203,8 +180,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(60124342327643617733)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(60147054197929147097)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
@@ -215,8 +192,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(60126894851910174957)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(60149606722195704321)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
@@ -227,8 +204,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_translatable=>false
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(60127303213358659574)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(60150015083644188938)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>80
@@ -320,8 +297,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(59940160392298753428)
-,p_plugin_id=>wwv_flow_api.id(59939301032763172161)
+ p_id=>wwv_flow_api.id(59962872262584282792)
+,p_plugin_id=>wwv_flow_api.id(59962012903048701525)
 ,p_file_name=>'SavedReportButton.js'
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
@@ -329,9 +306,8 @@ wwv_flow_api.create_plugin_file(
 );
 end;
 /
-prompt --application/end_environment
 begin
-wwv_flow_api.import_end(p_auto_install_sup_obj => nvl(wwv_flow_application_install.get_auto_install_sup_obj, false));
+wwv_flow_api.import_end(p_auto_install_sup_obj => nvl(wwv_flow_application_install.get_auto_install_sup_obj, false), p_is_component_import => true);
 commit;
 end;
 /
